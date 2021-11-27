@@ -18,6 +18,6 @@ function go() {
             throw e;
         }
     } else {
-        throw new SyntaxError();
+        throw new Error("Wrong value");
     }
 }
