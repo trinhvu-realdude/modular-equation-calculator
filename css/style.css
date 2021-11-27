@@ -33,7 +33,7 @@ body {
 }
 .input {
     width: 70px;
-    border: 2px solid rgb(110, 105, 105);
+    border: 2px solid rgb(128, 125, 125);
     border-radius: 5px;
 }
 .input:hover {
