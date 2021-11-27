@@ -1,23 +1,19 @@
 function go() {
-    const a_input = document.getElementById("a-value").value;
-    const b_input = document.getElementById("b-value").value;
-    const n_input = document.getElementById("n-value").value;
+    let a = document.getElementById("a-value").value;
+    let b = document.getElementById("b-value").value;
+    let n = document.getElementById("n-value").value;
 
-    if (a_input != "" && b_input != "" && n_input != "") {
+    if (a != "" && b != "" && n != "") {
         try {
-            const a = parseInt(a_input);
-            const b = parseInt(b_input);
-            const n = parseInt(n_input);
+            a = parseInt(a);
+            b = parseInt(b);
+            n = parseInt(n);
 
-            const d = gcd(n, a)[0];
-            const s = gcd(n, a)[1];
-            const r = gcd(n, a)[2];
-
-            extended_gcd(n, a, n / a, n % a, d);
+            coolSolution(gcd(n, a), extended_gcd(n, a, n / a, n % a, gcd(n, a)))
         } catch (e) {
             throw e;
         }
     } else {
-        throw new Error("Wrong value");
+        throw new Error("Invalid input");
     }
 }

@@ -56,6 +56,6 @@ function extended_gcd(dvd, dvs, q, rmd, d) {
         q = dvd / dvs;
         rmd = dvd % dvs;
     }
-    console.log(result);
+    
     return result;
 }
