@@ -1,6 +1,6 @@
 function gcd(a, b) {
-    var signX = (a < 0) ? -1 : 1,
-        signY = (b < 0) ? -1 : 1,
+    var s_value = (a < 0) ? -1 : 1,
+        r_value = (b < 0) ? -1 : 1,
         x = 0,
         y = 1,
         u = 1,
@@ -26,8 +26,8 @@ function gcd(a, b) {
     }
     return [
         b,
-        signX * x,
-        signY * y
+        s_value * x,
+        r_value * y
     ];
 }
 
