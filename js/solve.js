@@ -1,5 +1,5 @@
 function gcd(a, b) {
-    var s_value = (a < 0) ? -1 : 1,
+    let s_value = (a < 0) ? -1 : 1,
         r_value = (b < 0) ? -1 : 1,
         x = 0,
         y = 1,

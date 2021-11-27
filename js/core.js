@@ -3,7 +3,7 @@ function go() {
     let b = document.getElementById("b-value").value;
     let n = document.getElementById("n-value").value;
 
-    if (a != "" && b != "" && n != "") {
+    if (a !== "" && b !== "" && n !== "") {
         try {
             a = parseInt(a);
             b = parseInt(b);
