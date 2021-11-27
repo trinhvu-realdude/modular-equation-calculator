@@ -1,16 +1,4 @@
 function gcd(a, b) {
-    a = + a;
-    b = + b;
-    if (a !== a || b !== b) {
-        return [NaN, NaN, NaN];
-    }
-
-    if (a === Infinity || a === -Infinity || b === Infinity || b === -Infinity) {
-        return [Infinity, Infinity, Infinity];
-    }
-    if ((a % 1 !== 0) || (b % 1 !== 0)) {
-        return false;
-    }
     var signX = (a < 0) ? -1 : 1,
         signY = (b < 0) ? -1 : 1,
         x = 0,
@@ -56,6 +44,6 @@ function extended_gcd(dvd, dvs, q, rmd, d) {
         q = dvd / dvs;
         rmd = dvd % dvs;
     }
-    
+
     return result;
 }
