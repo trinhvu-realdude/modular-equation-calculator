@@ -11,7 +11,7 @@ function go() {
             b = parseInt(b);
             n = parseInt(n);
 
-            coolSolution(gcd(n, a), extended_gcd(n, a, n / a, n % a, gcd(n, a)), a, b, n)
+            coolSolution(gcd(n, a), euclidean(n, a, n / a, n % a, gcd(n, a)), a, b, n)
         } catch (e) {
             throw e;
         }

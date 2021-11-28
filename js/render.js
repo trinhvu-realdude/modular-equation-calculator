@@ -37,15 +37,16 @@ function generateEATableHeader(table) {
 }
 
 function generateEATable(table, secondData) {
-    secondData.forEach(row => {
+    for (let i = 0; i < secondData.length; i++) {
         const outputRow = document.createElement("tr");
-        for (let i = 0; i < row.length; i++) {
+        let row = secondData[i];
+        for (let j = 0; j < row.length - 1; j++) {
             const outputCell = document.createElement("td");
-            outputCell.innerHTML = row[i];
+            outputCell.innerHTML = row[j];
             outputRow.appendChild(outputCell);
         }
         table.appendChild(outputRow);
-    });
+    }
 }
 
 function generateResult(data, n, a) {

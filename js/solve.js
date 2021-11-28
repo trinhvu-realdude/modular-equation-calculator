@@ -31,11 +31,12 @@ function gcd(a, b) {
     ];
 }
 
-function extended_gcd(dvd, dvs, q, rmd, d) {
+function euclidean(dvd, dvs, q, rmd, d) {
     let result = [];
+    let q_set = [];
     while (dvs !== 0) {
-        result.push([dvd, dvs, Math.floor(q), rmd]);
-
+        q_set.push(Math.floor(q));
+        result.push([dvd, dvs, Math.floor(q), rmd, q_set]);
         dvd = dvs;
         if (dvd == d) {
             break;
