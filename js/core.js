@@ -3,9 +3,9 @@ function go() {
     let b = document.getElementById("b-value").value;
     let n = document.getElementById("n-value").value;
 
-    const checkEmptyFiled = filterEmptyError(a, b, n);
+    const checkEmptyField = filterEmptyError(a, b, n);
 
-    if (checkEmptyFiled === false) {
+    if (checkEmptyField === false) {
         try {
             a = parseInt(a);
             b = parseInt(b);

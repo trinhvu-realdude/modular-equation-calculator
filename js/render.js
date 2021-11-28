@@ -1,13 +1,18 @@
-function coolSolution(firstData, secondData, a, b, n) {
+function coolSolution(firstData, secondData, a, b, n) { 
+    // Create Euclidean Algorithm table element
     const ea_table = createEATableElement();
 
+    // Generate Euclidean Algorithm table header
     generateEATableHeader(ea_table);
 
+    // Generate Euclidean Algorithm table
     generateEATable(ea_table, secondData);
 
-    displayEATable(ea_table);
+    // Generate final result
+    const finalResult = generateResult(result(firstData, a, b, n), n, a);
 
-    displayResult(result(firstData, a, b, n));
+    // Display Euclidean Algorithm table
+    displayEATableResult(ea_table, finalResult);
 }
 
 function createEATableElement() {
@@ -43,10 +48,38 @@ function generateEATable(table, secondData) {
     });
 }
 
-function displayEATable(table) {
+function generateResult(data, n, a) {
+    const result = document.createElement("div");
+    result.className = "result-holder";
+
+    const gcd_line = document.createElement("p");
+    const s_r_line = document.createElement("p");
+    const x0_line = document.createElement("p");
+    const x_line = document.createElement("p");
+
+    gcd_line.innerHTML = "→ d = gcd(" + n + ", " + a + ") = " + data[0];
+    s_r_line.innerHTML = "→ s = " + data[1] + ", r = " + data[2];
+    x0_line.innerHTML = "→ x<sub>0</sub> = " + data[3] + " (mod " + data[5] + ")";
+    x_line.innerHTML = "→ x = " + data[4];
+
+    result.appendChild(gcd_line);
+    result.appendChild(s_r_line);
+    result.appendChild(x0_line);
+    result.appendChild(x_line);
+
+    return result;
+}
+
+function displayEATableResult(table, result) {
     const holder = document.createElement("div");
-    holder.className = "ea-table-holder";
-    holder.appendChild(table);
+    holder.className = "holder";
+
+    const table_holder = document.createElement("div");
+    table_holder.className = "ea-table-holder";
+    table_holder.appendChild(table);
+
+    holder.appendChild(table_holder);
+    holder.appendChild(result);
 
     showObject(holder);
 }
@@ -58,8 +91,4 @@ function showObject(object) {
         target.removeChild(target.children[0]);
     }
     target.appendChild(object);
-}
-
-function displayResult(result) { 
-    console.log(result);
 }
