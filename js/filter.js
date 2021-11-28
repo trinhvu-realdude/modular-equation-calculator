@@ -26,3 +26,14 @@ $(document).ready(function () {
         return /^\d*$/.test(value);
     });
 });
+
+function filterEmptyError(a, b, n) {
+    const target = document.getElementById("solution-target");
+    if (a !== "" && b !== "" && n !== "") {
+        target.style.display = "block";
+        return false;
+    } else {
+        target.style.display = "none";
+        return true;
+    }
+}

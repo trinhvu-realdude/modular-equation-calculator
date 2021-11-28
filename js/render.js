@@ -1,20 +1,22 @@
-function coolSolution(firstData, secondData) {
-    const table = createTableElement();
+function coolSolution(firstData, secondData, a, b, n) {
+    const ea_table = createEATableElement();
 
-    generateTableHeader(table);
+    generateEATableHeader(ea_table);
 
-    generateGCDTable(table, secondData);
+    generateEATable(ea_table, secondData);
 
-    displayTable(table);
+    displayEATable(ea_table);
+
+    displayResult(result(firstData, a, b, n));
 }
 
-function createTableElement() {
+function createEATableElement() {
     const result = document.createElement("table");
     result.className = "table table-striped";
     return result;
 }
 
-function generateTableHeader(table) {
+function generateEATableHeader(table) {
     const values = ["Dividend", "Divisor", "Quotient", "Remainder"]
     const header = document.createElement("tr");
     header.className = "header";
@@ -29,7 +31,7 @@ function generateTableHeader(table) {
     table.appendChild(header);
 }
 
-function generateGCDTable(table, secondData) {
+function generateEATable(table, secondData) {
     secondData.forEach(row => {
         const outputRow = document.createElement("tr");
         for (let i = 0; i < row.length; i++) {
@@ -41,9 +43,9 @@ function generateGCDTable(table, secondData) {
     });
 }
 
-function displayTable(table) {
+function displayEATable(table) {
     const holder = document.createElement("div");
-    holder.className = "gcd-table-holder";
+    holder.className = "ea-table-holder";
     holder.appendChild(table);
 
     showObject(holder);
@@ -55,6 +57,9 @@ function showObject(object) {
     while (target.children.length !== 0) {
         target.removeChild(target.children[0]);
     }
-
     target.appendChild(object);
+}
+
+function displayResult(result) { 
+    console.log(result);
 }

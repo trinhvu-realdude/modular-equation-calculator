@@ -47,3 +47,47 @@ function extended_gcd(dvd, dvs, q, rmd, d) {
 
     return result;
 }
+
+function result(gcd, a, b, n) {
+    const d = gcd[0];
+    const s = gcd[1];
+    const r = gcd[2];
+    const mod = Math.floor(n / d);
+
+    let x0 = r * b / d;
+
+    if (x0 < 0) {
+        while (x0 < 0) {
+            x0 = Math.floor(n / d + x0);
+        }
+    } else {
+        x0 = Math.floor(x0 % (n / d));
+    }
+
+    if (d < 2) {
+        const x = Math.floor(x0);
+        return [
+            d,
+            s,
+            r,
+            x0,
+            x,
+            mod
+        ];
+    } else {
+        let x_set = [];
+
+        for (let i = 0; i < d; i++) {
+            x_set.push(Math.floor(x0 + i * n / d));
+        }
+
+        return [
+            d,
+            s,
+            r,
+            x0,
+            x_set,
+            mod
+        ]
+    }
+}
