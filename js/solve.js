@@ -1,3 +1,12 @@
+/*********************************************
+ *  File: solve.js
+ *  Author: trinhvu-realdude
+ * 
+ */
+/** Function: gcd
+ *  
+ *  Calculate the Greatest Common Divisor (GCD) and the s value, r value using Euclidean Algorithm
+ */
 function gcd(a, b) {
     let s_value = (a < 0) ? -1 : 1,
         r_value = (b < 0) ? -1 : 1,
@@ -31,12 +40,22 @@ function gcd(a, b) {
     ];
 }
 
-function euclidean(dvd, dvs, q, rmd, d) {
+/** Function: extended_gcd
+ * 
+ *  Use GCD value to find other values: dividend, divisor, quotient, remainder
+ */
+function extended_gcd(dvd, dvs, q, rmd, d) {
     let result = [];
     let q_set = [];
     while (dvs !== 0) {
         q_set.push(Math.floor(q));
-        result.push([dvd, dvs, Math.floor(q), rmd, q_set]);
+        result.push([
+            dvd,
+            dvs,
+            Math.floor(q),
+            rmd,
+            q_set
+        ]);
         dvd = dvs;
         if (dvd == d) {
             break;
@@ -45,11 +64,45 @@ function euclidean(dvd, dvs, q, rmd, d) {
         q = dvd / dvs;
         rmd = dvd % dvs;
     }
-
     return result;
 }
 
-function result(gcd, a, b, n) {
+/** Function: extended_euclidean
+ * 
+ *  Resolve the problem by using Extended Euclidean Algorithm
+ */
+function extended_euclidean(dvd, dvs, q, rmd, d) {
+    let r0 = 0;
+    let r1 = 1;
+    let index = 2;
+    let i = 0;
+
+    let q_set = extended_gcd(dvd, dvs, q, rmd, d)[0][4];
+
+    let result = [];
+
+    while (i < q_set.length - 1) {
+        let r = r0 - r1 * q_set[i];
+        result.push([
+            index,
+            r0,
+            r1,
+            q_set[i],
+            r
+        ]);
+        r0 = r1;
+        r1 = r;
+        i++;
+        index++;
+    }
+    return result;
+}
+
+/** Function: result
+ * 
+ *  Calculate the final result
+ */
+function result(gcd, b, n) {
     const d = gcd[0];
     const s = gcd[1];
     const r = gcd[2];
@@ -81,7 +134,6 @@ function result(gcd, a, b, n) {
         for (let i = 0; i < d; i++) {
             x_set.push(Math.floor(x0 + i * n / d));
         }
-
         return [
             d,
             s,
