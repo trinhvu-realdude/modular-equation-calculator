@@ -47,6 +47,7 @@ function gcd(a, b) {
 function extended_gcd(dvd, dvs, q, rmd, d) {
     let result = [];
     let q_set = [];
+
     while (dvs !== 0) {
         q_set.push(Math.floor(q));
         result.push([
@@ -63,6 +64,31 @@ function extended_gcd(dvd, dvs, q, rmd, d) {
         dvs = rmd;
         q = dvd / dvs;
         rmd = dvd % dvs;
+    }
+    return result;
+}
+
+/** Function: euclidean
+ * 
+ *  Resolve the problem by using Euclidean Algorithm
+ */
+function euclidean(n, a) {
+    const d = gcd(n, a)[0];
+    let s = gcd(n, a)[1];
+    let r = gcd(n, a)[2];
+    let rmd = n % a;
+    let result = [];
+
+    while (s !== 0) {
+        result.push([n, s, a, r, d]);
+        n = a;
+        if (n == d) {
+            break;
+        }    
+        a = rmd;
+        r = s;
+        s = (d - a * r) / n;
+        rmd = n % a;
     }
     return result;
 }

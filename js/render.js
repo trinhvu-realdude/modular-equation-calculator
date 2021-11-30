@@ -7,7 +7,7 @@
  * 
  *  
  */
-function coolSolution(firstData, secondData, thirdData, a, b, n) { 
+function coolSolution(firstData, secondData, thirdData, fourthData, a, b, n) { 
     // Create Greatest Common Divisor table element
     const gcdTable = createGCDTableElement();
 
@@ -17,20 +17,29 @@ function coolSolution(firstData, secondData, thirdData, a, b, n) {
     // Generate Greatest Common Divisor table
     generateGCDTable(gcdTable, secondData);
 
+    // Create Euclidean table element
+    const eaTable = createEuclideanTableElement();
+
+    // Generate Euclidean table header
+    generateEuclideanTableHeader(eaTable, thirdData);
+
+    // Generate Euclidean table
+    generateEuclideanTable(eaTable, thirdData);
+
     // Create Extended Euclidean table element
-    const eeaTable = createEEATableElement();
+    const eeaTable = createExtendedEuclideanTableElement();
 
     // Generate Extended Euclidean table header
-    generateEEATableHeader(eeaTable);
+    generateExtendedEuclideanTableHeader(eeaTable);
 
-    // Generate Extended Euclidean table 
-    generateEEATable(eeaTable, thirdData, result(firstData, b, n));
+    // Generate Extended Euclidean table
+    generateExtendedEuclideanTable(eeaTable, fourthData, result(firstData, b, n));
 
     // Generate final result
     const finalResult = generateResult(result(firstData, b, n), n, a);
 
     // Display all elements
-    displayAll(gcdTable, eeaTable, finalResult);
+    displayAll(gcdTable, eaTable, eeaTable, finalResult);
 }
 
 /** Function: generateResult
@@ -39,7 +48,7 @@ function coolSolution(firstData, secondData, thirdData, a, b, n) {
  */
 function generateResult(data, n, a) {
     const result = document.createElement("div");
-    result.className = "result-holder";
+    result.id = "result-holder";
 
     const gcd_line = document.createElement("p");
     const s_r_line = document.createElement("p");
@@ -63,23 +72,32 @@ function generateResult(data, n, a) {
  * 
  *  
  */
-function displayAll(gcdTable, eeaTable, result) {
+function displayAll(gcdTable, eaTable, eeaTable, result) {
     const holder = document.createElement("div");
     holder.className = "holder";
 
     const gcdTableHolder = document.createElement("div");
-    gcdTableHolder.className = "gcd-table-holder";
+    gcdTableHolder.id = "gcd-table-holder";
     gcdTableHolder.appendChild(gcdTable);
+
+    const eaTableHolder = document.createElement("div");
+    const eaTableTitle = document.createElement("p");
+    eaTableTitle.className = "header-algorithm";
+    eaTableTitle.innerHTML = "Euclidean Algorithm";
+    eaTableHolder.id = "ea-table-holder";
+    eaTableHolder.appendChild(eaTableTitle);
+    eaTableHolder.appendChild(eaTable);
 
     const eeaTableHolder = document.createElement("div");
     const eeaTableTitle = document.createElement("p");
     eeaTableTitle.className = "header-algorithm";
     eeaTableTitle.innerHTML = "Extended Euclidean Algorithm";
-    eeaTableHolder.className = "eea-table-holder";
+    eeaTableHolder.id = "eea-table-holder";
     eeaTableHolder.appendChild(eeaTableTitle);
     eeaTableHolder.appendChild(eeaTable);
 
     holder.appendChild(gcdTableHolder);
+    holder.appendChild(eaTableHolder);
     holder.appendChild(eeaTableHolder);
     holder.appendChild(result);
 
