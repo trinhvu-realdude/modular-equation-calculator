@@ -17,7 +17,7 @@ function createEuclideanTableElement() {
  * 
  * 
  */
-function generateEuclideanTableHeader(table, thirdData) {
+function generateEuclideanTableHeader(table, firstData, thirdData) {
     const lengthData = thirdData.length;
     const header = document.createElement("tr");
     const headerElement = `
@@ -29,7 +29,7 @@ function generateEuclideanTableHeader(table, thirdData) {
                 <th>a</th>
                 <th rowspan="${lengthData+1}"><span>&#215;</span></th>
                 <th>r</th>
-                <th rowspan="${lengthData+1}"> = ${thirdData[0][4]}</th>
+                <th rowspan="${lengthData+1}"> = ${firstData[0]}</th>
             `;
     header.innerHTML = headerElement;
     table.appendChild(header);
@@ -43,7 +43,7 @@ function generateEuclideanTable(table, thirdData) {
     for (let i = thirdData.length-1; i >= 0; i--) {
         const outputRow = document.createElement("tr");
         let row = thirdData[i];
-        for (let j = 0; j < row.length-1; j++) {
+        for (let j = 0; j < row.length; j++) {
             const outputCell = document.createElement("td");
             outputCell.innerHTML = row[j];
             outputRow.appendChild(outputCell);

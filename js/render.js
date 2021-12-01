@@ -21,7 +21,7 @@ function coolSolution(firstData, secondData, thirdData, fourthData, a, b, n) {
     const eaTable = createEuclideanTableElement();
 
     // Generate Euclidean table header
-    generateEuclideanTableHeader(eaTable, thirdData);
+    generateEuclideanTableHeader(eaTable, firstData, thirdData);
 
     // Generate Euclidean table
     generateEuclideanTable(eaTable, thirdData);

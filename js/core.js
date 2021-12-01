@@ -26,7 +26,7 @@ function go() {
             // secondData: dvd, dvs, q, rmd, q_set
             const secondData = extended_gcd(n, a, n / a, n % a, gcd(n, a));
 
-            // thirdData: n, s, a, r, d
+            // thirdData: n, s, a, r
             const thirdData = euclidean(n, a);
 
             // fourthData: index of r value, r0, r1, q_set, final r

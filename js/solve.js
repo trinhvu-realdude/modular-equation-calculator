@@ -80,7 +80,7 @@ function euclidean(n, a) {
     let result = [];
 
     while (s !== 0) {
-        result.push([n, s, a, r, d]);
+        result.push([n, s, a, r]);
         n = a;
         if (n == d) {
             break;
