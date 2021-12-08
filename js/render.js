@@ -58,7 +58,7 @@ function generateResult(data, n, a) {
     gcd_line.innerHTML = "→ d = gcd(" + n + ", " + a + ") = " + data[0];
     s_r_line.innerHTML = "→ s = " + data[1] + ", r = " + data[2];
     x0_line.innerHTML = "→ x<sub>0</sub> = " + data[3] + " (mod " + data[5] + ")";
-    x_line.innerHTML = "→ x = " + data[4];
+    x_line.innerHTML = data[4].length > 1 ? "→ x = " + "[" + data[4] + "]" : "→ x = " + data[4];
 
     result.appendChild(gcd_line);
     result.appendChild(s_r_line);
