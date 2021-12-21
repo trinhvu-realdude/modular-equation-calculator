@@ -5,7 +5,7 @@
  */
 /** Function: createEuclideanTableElement
  * 
- * 
+ *  Create Euclidean table element
  */
 function createEuclideanTableElement() {
     const result = document.createElement("table");
@@ -15,7 +15,7 @@ function createEuclideanTableElement() {
 
 /** Function: generateEuclideanTableHeader
  * 
- * 
+ *  Generate Euclidean table header
  */
 function generateEuclideanTableHeader(table, firstData, thirdData) {
     const lengthData = thirdData.length;
@@ -37,7 +37,7 @@ function generateEuclideanTableHeader(table, firstData, thirdData) {
 
 /** Function: generateEuclideanTable
  * 
- * 
+ *  Generate Euclidean table
  */
 function generateEuclideanTable(table, thirdData) {
     for (let i = thirdData.length-1; i >= 0; i--) {

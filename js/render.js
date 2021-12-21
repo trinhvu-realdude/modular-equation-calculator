@@ -5,7 +5,7 @@
  */
 /** Function: coolSolution
  * 
- *  
+ *  Run some below functions to get the essential components of solution
  */
 function coolSolution(firstData, secondData, thirdData, fourthData, a, b, n) { 
     // Create Greatest Common Divisor table element
@@ -44,7 +44,7 @@ function coolSolution(firstData, secondData, thirdData, fourthData, a, b, n) {
 
 /** Function: generateResult
  * 
- *  
+ *  Display the result
  */
 function generateResult(data, n, a) {
     const result = document.createElement("div");
@@ -70,7 +70,7 @@ function generateResult(data, n, a) {
 
 /** Function: displayAll
  * 
- *  
+ *  Display all components
  */
 function displayAll(gcdTable, eaTable, eeaTable, result) {
     const holder = document.createElement("div");
@@ -106,7 +106,7 @@ function displayAll(gcdTable, eaTable, eeaTable, result) {
 
 /** Function: showObject
  * 
- *  
+ *  Function to show object
  */
 function showObject(object) {
     const target = document.getElementById("solution-target");

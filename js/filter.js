@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 /** Function: filterEmptyError
  * 
- *  Check the empty inputs from user
+ *  Check the empty inputs fields from user
  */
 function filterEmptyError(a, b, n) {
     const target = document.getElementById("solution-target");

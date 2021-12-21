@@ -42,7 +42,7 @@ function gcd(a, b) {
 
 /** Function: extended_gcd
  * 
- *  Use GCD value to find other values: dividend, divisor, quotient, remainder
+ *  Use GCD value to calculate other values: dividend, divisor, quotient, remainder
  */
 function extended_gcd(dvd, dvs, q, rmd, d) {
     let result = [];

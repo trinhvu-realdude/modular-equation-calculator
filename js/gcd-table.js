@@ -5,7 +5,7 @@
  */
 /** Function: createGCDTableElement
  * 
- *  
+ *  Create GCD table element
  */
 function createGCDTableElement() {
     const result = document.createElement("table");
@@ -15,7 +15,7 @@ function createGCDTableElement() {
 
 /** Function: generateGCDTableHeader
  * 
- *  
+ *  Generate GCD table header
  */
 function generateGCDTableHeader(table) {
     const values = ["Dividend", "Divisor", "Quotient", "Remainder"];
@@ -34,7 +34,7 @@ function generateGCDTableHeader(table) {
 
 /** Function: generateGCDTable
  * 
- *  
+ *  Generate GCD table
  */
 function generateGCDTable(table, secondData) {
     for (let i = 0; i < secondData.length; i++) {

@@ -5,7 +5,7 @@
  */
 /** Function: createExtendedEuclideanTableElement
  * 
- * 
+ *  Create Extended Euclidean table element
  */
 function createExtendedEuclideanTableElement() {
     const result = document.createElement("table");
@@ -15,7 +15,7 @@ function createExtendedEuclideanTableElement() {
 
 /** Function: generateExtendedEuclideanTableHeader
  * 
- * 
+ *  Generate Extended Euclidean table header
  */
 function generateExtendedEuclideanTableHeader(table) {
     const values = ["Step", ""];
@@ -34,7 +34,7 @@ function generateExtendedEuclideanTableHeader(table) {
 
 /** Function: generateExtendedEuclideanTable
  * 
- * 
+ *  Generate Extended Euclidean table
  */
 function generateExtendedEuclideanTable(table, fourthData, modData) {
     const mod = modData[5];

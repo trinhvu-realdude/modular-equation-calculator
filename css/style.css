@@ -59,7 +59,9 @@ body {
     display: inline-block;
 }
 
-#gcd-table-holder, #ea-table-holder, #eea-table-holder {
+#gcd-table-holder,
+#ea-table-holder, 
+#eea-table-holder {
     border-radius: 5px;
     border: 1px solid #bababa;
     background: #fafafa;
@@ -67,7 +69,9 @@ body {
     margin-bottom: 16px;
 }
 
-#gcd-table-holder:hover, #ea-table-holder:hover, #eea-table-holder:hover {
+#gcd-table-holder:hover, 
+#ea-table-holder:hover, 
+#eea-table-holder:hover {
     border: 1px solid rgb(128, 125, 125);
 }
 
