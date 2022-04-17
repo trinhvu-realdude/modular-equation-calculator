@@ -101,18 +101,42 @@ function displayAll(gcdTable, eaTable, eeaTable, result) {
         holder.appendChild(eeaTableHolder);
         holder.appendChild(result);
 
-        showObject(holder);
+        showObject(holder, "solution-target");
 }
 
 /** Function: showObject
  * 
  *  Function to show object
  */
-function showObject(object) {
-        const target = document.getElementById("solution-target");
+function showObject(object, id) {
+        const target = document.getElementById(id);
 
         while (target.children.length !== 0) {
                 target.removeChild(target.children[0]);
         }
         target.appendChild(object);
+}
+
+function showError(a, b, n) {
+        const holder = document.createElement("div");
+        holder.className = "holder-error";
+        const msg = document.createElement("p");
+
+        if (a == "") {
+                msg.innerHTML = "*Please fill a field*";
+                holder.appendChild(msg);
+                showObject(holder, "error-messages");
+        } else if (b == "") {
+                msg.innerHTML = "*Please fill b field*";
+                holder.appendChild(msg);
+                showObject(holder, "error-messages");
+        } else if (n == "") {
+                msg.innerHTML = "*Please fill n field*";
+                holder.appendChild(msg);
+                showObject(holder, "error-messages");
+        } 
+
+        if (a != "" && b != "" && n != "") {
+                showObject(holder, "error-messages");
+        }
 }

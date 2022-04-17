@@ -14,7 +14,7 @@ function go() {
 
         const checkEmptyField = filterEmptyError(a, b, n);
 
-        if (checkEmptyField === false) {
+        if (!checkEmptyField) {
                 try {
                         a = parseInt(a);
                         b = parseInt(b);
@@ -33,10 +33,12 @@ function go() {
                         const fourthData = extended_euclidean(n, a, n / a, n % a, gcd(n, a));
 
                         coolSolution(firstData, secondData, thirdData, fourthData, a, b, n);
+
+                        showError(a, b, n);
                 } catch (e) {
                         throw e;
                 }
         } else {
-                throw new Error("Invalid input");
+                showError(a, b, n);
         }
 }
