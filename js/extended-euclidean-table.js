@@ -18,7 +18,7 @@ function createExtendedEuclideanTableElement() {
  *  Generate Extended Euclidean table header
  */
 function generateExtendedEuclideanTableHeader(table) {
-        const values = ["Step", ""];
+        const values = [COLUMN.STEP, COLUMN.BLANK];
         const header = document.createElement("tr");
         header.className = "header";
 

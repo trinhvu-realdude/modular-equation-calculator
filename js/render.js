@@ -83,7 +83,7 @@ function displayAll(gcdTable, eaTable, eeaTable, result) {
         const eaTableHolder = document.createElement("div");
         const eaTableTitle = document.createElement("p");
         eaTableTitle.className = "header-algorithm";
-        eaTableTitle.innerHTML = "Euclidean Algorithm";
+        eaTableTitle.innerHTML = ALGORITHM.EUCLIDEAN_ALGORITHM;
         eaTableHolder.id = "ea-table-holder";
         eaTableHolder.appendChild(eaTableTitle);
         eaTableHolder.appendChild(eaTable);
@@ -91,7 +91,7 @@ function displayAll(gcdTable, eaTable, eeaTable, result) {
         const eeaTableHolder = document.createElement("div");
         const eeaTableTitle = document.createElement("p");
         eeaTableTitle.className = "header-algorithm";
-        eeaTableTitle.innerHTML = "Extended Euclidean Algorithm";
+        eeaTableTitle.innerHTML = ALGORITHM.EXTENDED_EUCLIDEAN_ALGORITHM;
         eeaTableHolder.id = "eea-table-holder";
         eeaTableHolder.appendChild(eeaTableTitle);
         eeaTableHolder.appendChild(eeaTable);
@@ -123,15 +123,15 @@ function showError(a, b, n) {
         const msg = document.createElement("p");
 
         if (a == "") {
-                msg.innerHTML = "*Please fill a field*";
+                msg.innerHTML = ERROR.MISSING_A;
                 holder.appendChild(msg);
                 showObject(holder, "error-messages");
         } else if (b == "") {
-                msg.innerHTML = "*Please fill b field*";
+                msg.innerHTML = ERROR.MISSING_B;
                 holder.appendChild(msg);
                 showObject(holder, "error-messages");
         } else if (n == "") {
-                msg.innerHTML = "*Please fill n field*";
+                msg.innerHTML = ERROR.MISSING_N;
                 holder.appendChild(msg);
                 showObject(holder, "error-messages");
         } 

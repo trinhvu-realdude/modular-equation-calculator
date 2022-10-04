@@ -18,7 +18,7 @@ function createGCDTableElement() {
  *  Generate GCD table header
  */
 function generateGCDTableHeader(table) {
-        const values = ["Dividend", "Divisor", "Quotient", "Remainder"];
+        const values = [COLUMN.DIVIDEND, COLUMN.DIVISOR, COLUMN.QUOTIENT, COLUMN.REMAINDER];
         const header = document.createElement("tr");
         header.className = "header";
 
