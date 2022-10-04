@@ -42,9 +42,12 @@ function generateGCDTable(table, secondData) {
                 let row = secondData[i];
                 for (let j = 0; j < row.length - 1; j++) {
                         const outputCell = document.createElement("td");
-                        outputCell.innerHTML = row[j];
+                        outputCell.innerHTML = (i == secondData.length - 1 && j == 1) 
+                                                ? `<span style="color: blue;">${row[j]}</span>` 
+                                                : row[j];
                         outputRow.appendChild(outputCell);
                 }
+
                 table.appendChild(outputRow);
         }
 }
