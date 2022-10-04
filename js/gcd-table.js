@@ -47,7 +47,6 @@ function generateGCDTable(table, secondData) {
                                                 : row[j];
                         outputRow.appendChild(outputCell);
                 }
-
                 table.appendChild(outputRow);
         }
 }
