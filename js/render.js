@@ -122,19 +122,24 @@ function showError(a, b, n) {
         holder.className = "holder-error";
         const msg = document.createElement("p");
 
-        if (a == "") {
+        if (a === "") {
                 msg.innerHTML = ERROR.MISSING_A;
                 holder.appendChild(msg);
                 showObject(holder, "error-messages");
-        } else if (b == "") {
+        } else if (b === "") {
                 msg.innerHTML = ERROR.MISSING_B;
                 holder.appendChild(msg);
                 showObject(holder, "error-messages");
-        } else if (n == "") {
+        } else if (n === "") {
                 msg.innerHTML = ERROR.MISSING_N;
                 holder.appendChild(msg);
                 showObject(holder, "error-messages");
-        } 
+        } else if (a == 0 || n == 0) {
+                msg.innerHTML = ERROR.UNDEFINED;
+                holder.appendChild(msg);
+                showObject(holder, "error-messages");
+        }
+        
 
         if (a != "" && b != "" && n != "") {
                 showObject(holder, "error-messages");

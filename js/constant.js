@@ -13,7 +13,8 @@ const ALGORITHM = {
 }
 
 const ERROR = {
-    MISSING_A: "*Please fill a field*",
-    MISSING_B: "*Please fill b field*",
-    MISSING_N: "*Please fill n field*"
-}
+    MISSING_A: "Please fill a field",
+    MISSING_B: "Please fill b field",
+    MISSING_N: "Please fill n field",
+    UNDEFINED: "Result is undefined"
+};
