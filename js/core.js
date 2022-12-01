@@ -36,7 +36,7 @@ function go() {
 
                         showError(a, b, n);
                 } catch (e) {
-                        console.log(e);
+                        console.error(e);
                 }
         } else {
                 showError(a, b, n);

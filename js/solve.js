@@ -73,9 +73,11 @@ function extended_gcd(dvd, dvs, q, rmd, d) {
  *  Resolve the problem by using Euclidean Algorithm
  */
 function euclidean(n, a) {
+        // const d = gcd(n, a)[0];
+        // let s = gcd(n, a)[1];
+        // let r = gcd(n, a)[2];
         const d = gcd(n, a)[0];
-        let s = gcd(n, a)[1];
-        let r = gcd(n, a)[2];
+        let [ , s, r] = gcd(n, a);
         let rmd = n % a;
         let result = [];
 
@@ -129,9 +131,10 @@ function extended_euclidean(dvd, dvs, q, rmd, d) {
  *  Calculate the final result
  */
 function result(gcd, b, n) {
-        const d = gcd[0];
-        const s = gcd[1];
-        const r = gcd[2];
+        // const d = gcd[0];
+        // const s = gcd[1];
+        // const r = gcd[2];
+        const [d, s, r] = gcd;
         const mod = Math.floor(n / d);
 
         let x0 = r * b / d;
