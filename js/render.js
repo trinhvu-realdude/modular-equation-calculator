@@ -38,8 +38,10 @@ function coolSolution(firstData, secondData, thirdData, fourthData, a, b, n) {
         // Generate final result
         const finalResult = generateResult(result(firstData, b, n), n, a);
 
+        const resultElements = [gcdTable, eaTable, eeaTable, finalResult];
+
         // Display all elements
-        displayAll(gcdTable, eaTable, eeaTable, finalResult);
+        displayAll(...resultElements);
 }
 
 /** Function: generateResult

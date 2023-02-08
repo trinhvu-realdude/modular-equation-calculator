@@ -32,7 +32,9 @@ function go() {
                         // fourthData: index of r value, r0, r1, q_set, final r
                         const fourthData = extended_euclidean(n, a, n / a, n % a, gcd(n, a));
 
-                        coolSolution(firstData, secondData, thirdData, fourthData, a, b, n);
+                        const data = [firstData, secondData, thirdData, fourthData, a, b, n];
+
+                        coolSolution(...data);
 
                         showError(a, b, n);
                 } catch (e) {
