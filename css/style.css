@@ -37,13 +37,9 @@ body {
 
 .input {
     width: 70px;
-    border: 2px solid rgb(128, 125, 125);
+    border: 2px solid gray;
     border-radius: 5px;
     text-align: center;
-}
-
-.input:hover {
-    border: 2px solid black;
 }
 
 .holder {
@@ -62,17 +58,8 @@ body {
 #gcd-table-holder,
 #ea-table-holder, 
 #eea-table-holder {
-    border-radius: 5px;
-    border: 1px solid #bababa;
-    background: #fafafa;
     padding: 10px 18px;
     margin-bottom: 16px;
-}
-
-#gcd-table-holder:hover, 
-#ea-table-holder:hover, 
-#eea-table-holder:hover {
-    border: 1px solid rgb(128, 125, 125);
 }
 
 #suggestion {
